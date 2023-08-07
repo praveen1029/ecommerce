@@ -1,0 +1,133 @@
+{% extends 'initial_base.html' %}
+
+{% block content %}
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+    <div class="container">
+        {% for message in messages %}
+        <h5>
+            <div class="alert alert-danger mt-5" style=" width: 47vw; margin-left:10vh; text-align: center;">
+                {{ message }}
+            </div>
+        </h5>
+        {% endfor %}
+    </div>
+    <div class='row'>
+        <div class='col-md-3'></div>
+        <div class='col-md-5 mt-3'>
+            <div class="card p-4 total">
+                <form method='post' class='post-form' action="{% url 'usercreate' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="text" style="text-align: center;">REGISTREATION</h2>
+                        </div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Full Name : </label><br>
+                            <input type="text" name="fname" class="form-control" ><br>
+                            <input type="text" name="lname" class="form-control" ><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Username : </label><br>
+                            <input type="text" name="usrname" class="form-control"><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Age : </label>
+                            <input type="number" name="age" class="form-control" ><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Date Of Birth : </label>
+                            <input type="date" name="dob" class="form-control" ><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Gender : </label> <br>
+                            <input type="radio" name="gender"  value="Male">
+                            <label class="gen">Male </label>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="radio" name="gender" value="Female">
+                            <label class="gen">Female </label>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Address : </label>
+                            <textarea class="form-control" name="address" cols="52" rows="5"></textarea><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Phone No : </label>
+                            <input type="number" name="phno" class="form-control"><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Email : </label>
+                            <input type="email" name="email" class="form-control"><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Photo : </label>
+                            <input type="file" name="file" class="form-control" accept="image/*"><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Password : </label>
+                            <input type="password" name="password" class="form-control"><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Confirm Password : </label>
+                            <input type="password" name="cpassword" class="form-control"><br>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4 mt-3">
+                            <button type="submit" class="btn bg-secondary submit">Submit</button>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                    
+                    <div class="row" style="text-align: center;">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-5 mt-3">
+                            <p class='text' >Already a member <a class ="text-danger sign" href="{% url 'load_login' %}" >Login</a></p>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

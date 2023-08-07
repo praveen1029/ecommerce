@@ -1,0 +1,75 @@
+.banner{
+    width: 100%;
+    height: 90vh;
+}
+
+.section-title{
+    font-size: large;
+}
+
+div.products {
+    margin-top: 50px;
+    margin-left: 2px;
+    padding:5px;
+    width: 100%;
+    height: 110vh;
+    overflow: auto;
+    text-align:justify;
+}
+
+.item img{
+    height:20vw;
+    width: 18vw;
+    margin-top: 10px;
+    
+}
+
+.item{
+    border-style: double;
+    width: 98%;
+    height: 42vh;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    display: grid;
+    font-size: 4vh;
+    width: 35vh;
+    align-items: center;
+    text-align: center;
+    grid-template-columns: minmax(2vw, 1fr) auto minmax(2vw, 1fr);
+    grid-gap: 20px;
+    text-transform: uppercase;
+}
+
+h1:before,
+h1:after {
+    content: '';
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+    height: 6px;
+
+}
+
+.data{
+    font-size: 3vh;
+    margin-left: 2px;
+
+}
+
+.cartbutton{
+    width: 15vh;
+    margin-left: 2px;
+
+}
+
+.cartbutton a{
+    color: black;
+    font-size: 2vh;
+}
+
+.sale2 img{
+    width: 47vh;
+    height: 78vh;
+}

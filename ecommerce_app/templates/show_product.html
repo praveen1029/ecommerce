@@ -1,0 +1,48 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/show_product.css' %}">
+    <title>Cart</title>
+</head>
+<body style="background-color: lightslategrey;">
+    <div class="container">
+        {% for message in messages %}
+        <h5>
+            <div class="alert alert-danger mt-5" style=" width: 47vw; margin-left:10vh; text-align: center;">
+                {{ message }}
+            </div>
+        </h5>
+        {% endfor %}
+    </div>
+    <div class="container card mt-5">
+
+        <h1 class="mt-1" style="font-size: 50px; text-align: center;">Product Data</h1>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <th>NAME</th>
+                    <th>ACTION</th>
+                </thead>
+                <tbody>
+                    {% for item in products %}
+                    <tr>
+                        <td><a href="{% url 'admin_product_details' item.id %}">{{item.pr_name}}</a></td>
+                        <div>
+                        <td><a class="edit" href="{% url 'load_edit_product' item.id %}">Edit</a><a class="delete" href="/deleteproduct/{{item.id}}">delete</a></td>
+                        </div>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table><br><br>
+        </div>
+    </div>
+</body>
+
+
+{% endblock %}
+
+
+
+        

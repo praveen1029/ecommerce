@@ -1,0 +1,39 @@
+.navbar{
+    height: 10px;
+}
+
+
+.nav-item{
+    font-size: 22px;
+}
+
+.navbar-brand{
+    font-size: 27px;
+    background-color: #54B4D3;
+    padding-left: 4vh;
+    padding-right: 2vh;
+    border-radius: 10px;
+    font-weight: 200;
+}
+
+body{
+    background: url("/static/img/school.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+}
+
+.alert{
+    background: rgba(224,242,241, 0.5) ;
+    height: 28vh;
+}
+
+.alert h1{
+    font-size: 3vw;
+    margin-bottom: 7vh;
+    margin-top: 2vh;
+}
+
+.alert h3{
+    font-size: 2vw;
+}

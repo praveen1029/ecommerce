@@ -1,0 +1,48 @@
+h1{
+    font-size: 50px;
+    text-align: center;
+}
+
+.data{
+    border-style: double;
+    border-width: 10px;
+    margin-top: 200px;
+    height: 320vw;
+    width: 100vw;
+    background: rgba(1, 7, 1, 0.7) ;
+    color: white;
+
+}
+
+.teacher{
+    text-align: left;
+    font-size: 2vh;
+}
+
+.total{
+    height: 30vw;
+    width: 40vw;
+    margin-left: -2vh;
+}
+input{
+    background-color: red; 
+    height: 3vh; 
+    width:20vh;
+    font-size: 2vh;
+    margin-left: 13vw;
+}
+
+.navbar-brand{
+    font-size: 27px;
+}
+
+
+
+
+#show_user{
+    background-color: #54B4D3;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    border-radius: 10px;
+    font-weight: 400;
+}

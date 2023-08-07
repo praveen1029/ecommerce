@@ -1,0 +1,40 @@
+#add_product{
+    background-color: #54B4D3;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    border-radius: 10px;
+    font-weight: 400;
+}
+
+.total{
+    border-style: solid;
+    height:98%;
+    width: 90%;
+    margin-top: 20px;
+    padding-top: 100px;
+    margin-left: 5vw;
+    background: rgba(1, 7, 1, .8) ;
+    text-align: left;
+    border-radius: 20px;
+}
+
+body{
+    background-image: linear-gradient(to right,green,lightblue );
+}
+
+.navbar-brand{
+    font-size: 27px;
+}
+
+label{
+    color: white;
+    font-size:30px;
+}
+
+.submit{
+    width: 30vh;
+    height: 5vh;
+    color: black;
+    font-size: 18px;
+
+}

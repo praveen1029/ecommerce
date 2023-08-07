@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <title>ecommerce</title>
+</head>
+<style>
+    body{
+    background: url("/static/img/order.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+}
+
+.navbar-brand{
+    font-size: 27px;
+}
+
+#home{
+    background-color: #54B4D3;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    border-radius: 10px;
+    font-weight: 400;
+}
+</style>
+
+<body>
+    <div class="alert alert-dark text-center w-50" style="position: absolute; left: 24%; top: 40%;">
+        <h1><B>Order Placed</B></h1><br><br>
+        <input class="back" type="button" value="Back" onclick="javascript:history.go(-1)" style="background-color: red; height: 3vh; width:10vh;">
+    </div>
+
+</body>

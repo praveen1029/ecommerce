@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <title>ecommerce</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="nav-header">
+                    <div class="nav-title">
+                        <img class="img-thumbnail float-left logo" src="{% static 'img/logo.jpg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input placeholder="Search..." class="form-control ml-2 mt-2 search">
+        <div class="col-md-auto">
+            <button class="form-control" style="margin-top: 5px;">Search</button>
+        </div>
+        <i class="fa fa-shopping-cart" style="font-size:2vh"></i>
+        <a class="navbar-brand signup" id="signup" href="{% url 'load_cart' %}">Cart</a>
+
+
+        <div class="nav-item dropdown">
+            <a href="" class="navbar-brand dropdown-toggle text-light login" data-toggle="dropdown">Account</a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a href="{% url 'load_login' %}" class="dropdown-item" style="font-size: large;">Already a  Member? &nbsp; <span style="color:blue;">Login</span></a>
+                <a href="{% url 'load_signup' %}" class="dropdown-item" style="font-size: large;">New Member? &nbsp; <span style="color:blue;">SignUp</span></a>
+            </div>
+        </div>
+    </nav>
+    {% block content %}
+                
+    {% endblock %}
+
+        <div class="container-fluid bg-secondary text-light mt-5 pt-5" style="font-size: larger;">
+            <div class="row px-xl-5 pt-5">
+                <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+                    <a class="mb-4 display-5" href="" class="text-decoration-none">
+                        <img class="img-thumbnail float-left" style="height: 75px; width: 400px;" src="{% static 'img/logo.jpg' %}" alt="">
+                    </a>
+                    <div style="clear: both;"></div><br>
+                        <p class="mb-2" ><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, Banglore, India</p>
+                        <p class="mb-2" ><i class="fa fa-envelope text-primary mr-3"></i>ecommerce@example.com</p>
+                        <p class="mb-0" ><i class="fa fa-phone-alt text-primary mr-3"></i>+91 11111 1111</p>
+                    </div>
+                    <div class="col-lg-8 col-md-12">
+                        <div class="row">
+                            <div class="col-md-4 mb-5">
+                                <h5 class="font-weight-bold mb-4" style="font-size: larger;">Quick Links</h5>
+                                <div class="d-flex flex-column justify-content-start text-light" >
+                                    <a class="text-light mb-2" href="" ><i class="fa fa-angle-right mr-2"></i>Home</a>
+                                    <a class="text-light mb-2" href=""><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
+                                    <a class="text-light mb-2" href=""><i class="fa fa-angle-right mr-2"></i>Orders</a>
+                                    <a class="text-light" href=""><i class="fa fa-angle-right mr-2"></i>Logout</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-5">
+                                <h5 class="font-weight-bold text-light mb-4" style="font-size: large;">Newsletter</h5>
+                                <form action="">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control border-0 py-4" placeholder="Your Email"
+                                            required="required" />
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-primary btn-block border-0 py-3" type="submit" style="font-size: large;">Subscribe Now</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row border-top border-light mx-xl-5 py-4">
+                    <div class="col-md-6 px-xl-0">
+                        <p class="mb-md-0 text-center text-md-left text-dark">
+                            <a class="text-dark font-weight-semi-bold" href="#">E-Commerce</a>. All Rights Reserved. 
+                        </p>
+                    </div>
+                    <div class="col-md-6 px-xl-0 text-center text-md-right">
+                        <img class="img-fluid" src="{% static 'img/payments.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

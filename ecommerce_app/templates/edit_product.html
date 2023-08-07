@@ -1,0 +1,127 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/product.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        {% for message in messages %}
+        <h5>
+            <div class="alert alert-danger mt-5" style=" width: 47vw; margin-left:10vh; text-align: center;">
+                {{ message }}
+            </div>
+        </h5>
+        {% endfor %}
+    </div>
+    <div class='row'>
+        <div class='col-md-3'></div>
+        <div class='col-md-5 mt-3'>
+            <div class="card p-4 total">
+                <form method='post' class='post-form' action="/edit_product/{{product.id}}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-5"></div>
+                        <div class="col-md-12">
+                            <h3 class="text-primary" style="text-align: center;">Edit Product</h3>
+                        </div>
+                    </div><br>
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Product Name : </label><br>
+                            <input type="text" name="pname" class="form-control" value="{{product.pr_name}}"><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Cost : </label><br>
+                            <input type="number" name="cost" class="form-control" value="{{product.pr_cost}}" ><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Discount : </label>
+                            <input type="number" name="discount" class="form-control" value="{{product.pr_discount}}" ><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Brand : </label>
+                            <input type="text" name="brand" class="form-control" value="{{product.pr_brand}}"><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Rating (Out of 5) : </label>
+                            <input type="number" name="rating" class="form-control" value="{{product.pr_rating}}"><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Colour : </label>
+                            <input type="text" name="colour" class="form-control" value="{{product.pr_colour}}"><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Description : </label>
+                            <input type="text" name="description" class="form-control" value="{{product.pr_description}}"><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Main Photo : </label>
+                            <input type="file" name="mphoto" class="form-control" accept="image/*"><br>
+                        </div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Sub Photos : </label>
+                            <input type="file" name="photo1" class="form-control" accept="image/*"><br>
+                            <input type="file" name="photo2" class="form-control" accept="image/*"><br>
+                            <input type="file" name="photo3" class="form-control" accept="image/*"><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Category : </label>
+                            <select class="form-control" name="select_item">
+                                <option value="{{ product.category.id }}" selected>{{ product.category.cat_name}}</option>
+                                {% for item in categorys %}
+
+                                <option value="{{ item.id }}">{{ item.cat_name }}</option>
+
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4 mt-3">
+                            <button type="submit" class="btn btn-outline-info submit">Submit</button>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="col-md-3"></div>
+        <input class="back" type="button" value="Back" onclick="javascript:history.go(-1)" style="    background-color: red; height: 3vh; width:20vh; font-size: 2vh; margin-left:17vw; margin-top: 20px; margin-bottom:20px;" >   
+
+        </div>
+    </div>
+</body>
+
+{% endblock %}

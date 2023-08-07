@@ -1,0 +1,43 @@
+body{
+    text-align: center;
+    background: url("/static/img/delivery.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100% 130vh;
+}
+
+
+.total{
+    border-style: solid;
+    height:85%;
+    width: 90%;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    margin-left: 5vw;
+    background: rgb(114, 163, 243,1) ;
+    text-align: left;
+    
+}
+
+
+
+
+label{
+    color: white;
+    font-size:30px;
+}
+
+
+.submit{
+    width: 30vh;
+    height: 5vh;
+    color: black;
+    font-size: 18px;
+
+}
+
+p{
+ font-size: 18px;
+ margin-left: -1vw;
+ color: black;
+}

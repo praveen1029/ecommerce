@@ -1,0 +1,66 @@
+{% extends 'initial_base.html' %}
+
+{% block content %}
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <div class="container">
+        {% for message in messages %}
+        <h5>
+            <div class="alert alert-danger mt-5" style=" width: 47vw; margin-left:10vh; text-align: center;">
+                {{ message }}
+            </div>
+        </h5>
+        {% endfor %}
+    </div>
+    <div class='row'>
+        <div class='col-md-3'></div>
+        <div class='col-md-5 mt-3 mb-5'>
+            <div class="card p-4 total">
+                <form method='post' class='post-form' action="{% url 'userlogin' %}">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="text" style="text-align: center;">LOGIN</h2>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Username : </label>
+                            <input type="text" name="usrname" class="form-control"><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Password : </label>
+                            <input type="password" name="password" class="form-control"><br>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4 mt-3">
+                            <button type='submit' class='btn bg-secondary submit'>Log In</button>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                    
+                    <div class="row" style="text-align: center;">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6 mt-3">
+                            <p class='text' >Don't have an account <a class="text-danger" href="{% url 'load_signup' %}" >Signup</a></p>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends 'final_base.html' %}
+
+{% block content %}
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/shop.css' %}">
+</head>
+
+
+<body>
+    <div class="container-fluid">
+
+    {% if category == "Toys" %}
+        <img class="banner" src="{% static 'img/toys.jpg' %}" alt="">
+
+        {% elif category == "Electronics" %}
+        <img  class="banner" src="{% static 'img/electronics.jpg' %}" alt="">
+        {% elif category == "Home & Kitchen" %}
+        <img  class="banner" src="{% static 'img/kitchen.jpg' %}" alt="">
+        {% elif category == "Mobiles" %}
+        <img  class="banner" src="{% static 'img/mobile.jpg' %}" alt="">
+        {% elif category == "Fashion" %}
+        <img  class="banner" src="{% static 'img/fashion.jpg' %}" alt="">
+        {% else %}
+        <img  class="banner" src="{% static 'img/default_banner.jpeg' %}" alt="">
+        {% endif %}
+
+    <div class="row ">
+    <div class="col-sm-3 ">
+        <h5 class="section-title  text-uppercase mt-4" ><span >Filter by Price</span></h5>
+        <div class=" p-3 mb-30" style=" background-color: antiquewhite;">
+            <form>
+                <div class=" d-flex align-items-center justify-content-between mb-2" style="font-size: x-large;">
+                    <ul style="list-style-type: none">
+                        <li><input type="checkbox" style="margin-left: -30px;"> All Items</li>
+                    </ul>
+                    <span class="badge border font-weight-normal" style="font-size: x-large;">1000</span>
+                </div>
+                <div class=" d-flex align-items-center justify-content-between mb-3" style="font-size: large;">
+                    <ul style="list-style-type: none">
+                        <li><input type="checkbox" style="margin-left: -30px;"> 0 <span>&#8377;</span> - 100<span>&#8377;</span></li>
+                    </ul>
+                    <span class="badge border font-weight-normal" style="font-size: large;">150</span>
+                </div>
+                <div class=" d-flex align-items-center justify-content-between mb-3" style="font-size: large;">
+                    <ul style="list-style-type: none">
+                        <li><input type="checkbox" style="margin-left: -30px;"> 100 <span>&#8377;</span> - 200<span>&#8377;</span></li>
+                    </ul>
+                    <span class="badge border font-weight-normal" style="font-size: large;">295</span>
+                </div>
+                <div class=" d-flex align-items-center justify-content-between mb-4" style="font-size: large;">
+                    <ul style="list-style-type: none">
+                        <li><input type="checkbox" style="margin-left: -30px;"> 200 <span>&#8377;</span> - 300<span>&#8377;</span></li>
+                    </ul>
+                    <span class="badge border font-weight-normal" style="font-size: large;">246</span>
+                </div>
+                <div class=" d-flex align-items-center justify-content-between mb-3" style="font-size: large;">
+                    <ul style="list-style-type: none">
+                        <li><input type="checkbox" style="margin-left: -30px;"> 300 <span>&#8377;</span> - 400<span>&#8377;</span></li>
+                    </ul>
+                    <span class="badge border font-weight-normal" style="font-size: large;">145</span>
+                </div>
+                <div class=" d-flex align-items-center justify-content-between mb-3" style="font-size: large;">
+                    <ul style="list-style-type: none">
+                        <li><input type="checkbox" style="margin-left: -30px;"> 400 <span>&#8377;</span> - 500<span>&#8377;</span></li>
+                    </ul>
+                    <span class="badge border font-weight-normal"style="font-size: large;">168</span>
+                </div>
+            </form>
+    </div><br>
+    <div class="sale2">
+        <img src="{% static 'img/sale2.jpg' %}" alt="">
+    </div>
+    </div>
+    <div class="col-sm-9">
+        <div class="products">
+            {% for product in products %}
+            <div class="item row px-xl-5 bg-info">
+                <div class="col-lg-4">
+                    <img class="img-fluid " src="{{product.pr_mimage.url}}">
+                </div>
+                <div class="col-lg-4 data">
+                    <h1>{{product.pr_name}}</h1>
+                    <div>
+                        <p>{{product.pr_name}}</p>
+                        <p>{{product.pr_description}}</p>
+                        
+                        {% if product.pr_discount == 0 %}
+                        <p>&#8377;{{product.pr_cost}}</p>
+                        {% else %}
+                        <p>&#8377;<del>{{product.pr_cost}}</del>&nbsp;{{product.pr_discount}}%Off&nbsp;  -  &nbsp;&#8377;{{product.pr_discost}}</p>
+                        {% endif %}
+                    </div><br>
+                <button class="btn btn-secondary cartbutton"> <a href="{% url 'load_product_details_fp' product.id %}" class="cartlink">View Details</a></button>
+                <button class="btn btn-secondary cartbutton"> <a href="{% url 'add_to_cart' product.id %}" class="cartlink">Add To Cart</a></button>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+</div>
+
+</body>
+
+{% endblock %}

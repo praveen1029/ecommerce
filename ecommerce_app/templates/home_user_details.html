@@ -1,0 +1,41 @@
+{% extends 'final_base.html' %}
+
+{% block content %}
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/user_details.css' %}">
+    <title>Details</title>
+</head>
+
+<body>
+    <div class='row mt-5'>
+        <div class='col-md-3'></div>
+        <div class='col-md-5 mt-3'>
+            <div class="card container total ">
+                <div class=" col-md-12 mt-0 data">
+                    <h2 style="font-size: 3vw; text-align: center;">{{user.user.first_name}} {{user.user.last_name}}'s Data</h2>
+                    <div class="teacher">
+                        {% if user.photo.url != None %}
+                            <img class="img-thumbnail mt-3" align="right" src="{{user.photo.url}}" alt="" style="width: 30vh; height: 34vh; ">
+                        {% else %}
+                            <img class="img-thumbnail mt-5" align="right" src="{% static 'img/default.png' %}" alt="" style="height: 30vh;" >
+                        {% endif %}
+                        <div class="container mt-5">
+
+                                <br><br><label>{{user.user.username}}</label><br>
+                                <label>{{user.user.email}}</label><br>
+                                <label>{{user.user_age}}</label><br>
+                                <label>{{user.user_dob}}</label><br>
+                                <label>{{user.user_gender}}</label><br>
+                                <label>{{user.user_phno}}</label><br>
+                                <label>{{user.user_addr}}</label><br><br><br><br><br>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-outline-dark bg-danger submit w-50" style="margin-left:9vw"><a href="{% url 'load_edit_user' user.id %}"style="color:black;, font-size:20px; ">Edit </a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

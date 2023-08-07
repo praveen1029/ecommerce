@@ -1,0 +1,116 @@
+{% extends 'final_base.html' %}
+
+{% block content %}
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+    <div class="container">
+        {% for message in messages %}
+        <h5>
+            <div class="alert alert-danger mt-5" style=" width: 47vw; margin-left:10vh; text-align: center;">
+                {{ message }}
+            </div>
+        </h5>
+        {% endfor %}
+    </div>
+    <div class='row'>
+        <div class='col-md-3'></div>
+        <div class='col-md-5 mt-3'>
+            <div class="card p-4 total">
+                <form method='post' class='post-form' action="/edit_user/{{user.id}}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="text" style="text-align: center;">UPDATE DATA</h2>
+                        </div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Full Name : </label><br>
+                            <input type="text" name="fname" class="form-control" value="{{user.user.first_name}}"><br>
+                            <input type="text" name="lname" class="form-control" value="{{user.user.last_name}}"><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Username : </label><br>
+                            <input type="text" name="usrname" class="form-control" value="{{user.user.username}}"><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Age : </label>
+                            <input type="number" name="age" class="form-control" value="{{user.user_age}}"><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        {% if user.gender is Male %}
+                        <div class="col-md-12">
+                            <label >Gender : </label> <br>
+                            <input type="radio" name="gender"  value="Male" checked>
+                            <label class="gen">Male </label>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="radio" name="gender" value="Female">
+                            <label class="gen">Female </label>
+                        </div>
+                    {% else %}
+                        <div class="col-md-12">
+                            <label >Gender : </label> <br>
+                            <input type="radio" name="gender"  value="Male" >
+                            <label class="gen">Male </label>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="radio" name="gender" value="Female" checked>
+                            <label class="gen">Female </label>
+                        </div>
+                    {% endif %}
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Address : </label>
+                            <input type="text" name="address" class="form-control" value="{{user.user_addr}}"><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Phone No : </label>
+                            <input type="number" name="phno" class="form-control" value="{{user.user_phno}}"><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Email : </label>
+                            <input type="email" name="email" class="form-control" value="{{user.user.email}}"><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Photo : </label>
+                            <input type="file" name="file" class="form-control" accept="image/*"><br>
+                        </div>
+                    </div><br>
+                    
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4 mt-3">
+                            <button type="submit" class="btn bg-secondary submit">Submit</button>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

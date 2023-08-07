@@ -1,0 +1,39 @@
+#show_category{
+    background-color: #54B4D3;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    border-radius: 10px;
+    font-weight: 400;
+}
+
+.total{
+    border-style: solid;
+    height:98%;
+    width: 90%;
+    margin-top: 20px;
+    padding-top: 100px;
+    margin-left: 5vw;
+    background: rgba(1, 7, 1, .8) ;
+    text-align: left;
+    border-radius: 20px;
+}
+
+body{
+    background: url("/static/img/admin.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+}
+
+.navbar-brand{
+    font-size: 27px;
+}
+
+input[type=button]{
+    background-color: red; 
+    width: 15vh; 
+    height: 5vh; 
+    margin-top: 17px; 
+    margin-left: 3vh;
+}
+

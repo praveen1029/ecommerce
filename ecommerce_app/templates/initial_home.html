@@ -1,0 +1,360 @@
+{% extends 'initial_base.html' %}
+
+{% block content %}
+<head>
+    {% load static %}
+</head>
+<body>
+    <img class="banner" src="{% static 'img/offer.jpg' %}" alt="">
+
+    <div class="container-fluid">
+        <div class="row mt-5">
+            <div class="col-sm-3">
+                <div class="card  kitchen-card">
+                    <h2>70% Off On all Kitchen appliance </h2>
+                    <div class="row">
+                        <div class="col">
+                            {% for obj in products %}
+                                {% if obj.id == 27 %}
+                                    <a href="{% url 'load_product_details_fh' obj.id %}"><img class="img-thumbnail" src="{{obj.pr_mimage.url}}" alt=""></a>
+                                    <p>{{obj.pr_name}}</p>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="col">
+                            {% for obj in products %}
+                                {% if obj.id == 24 %}
+                                    <a href="{% url 'load_product_details_fh' obj.id %}"><img class="img-thumbnail" src="{{obj.pr_mimage.url}}" alt=""></a>
+                                    <p>{{obj.pr_name}}</p>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            {% for obj in products %}
+                                {% if obj.id == 26 %}
+                                    <a href="{% url 'load_product_details_fh' obj.id %}"><img class="img-thumbnail" src="{{obj.pr_mimage.url}}" alt=""></a>
+                                    <p>{{obj.pr_name}}</p>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="col">
+                            {% for obj in products %}
+                                {% if obj.id == 32 %}
+                                    <a href="{% url 'load_product_details_fh' obj.id %}"><img class="img-thumbnail" src="{{obj.pr_mimage.url}}" alt=""></a>
+                                    <p>{{obj.pr_name}}</p>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col ">
+                <div class="col heading card-title">
+                    <h3>Prime Deals in Electronics</h3>
+                        <div class="d-flex ">
+                            {% for obj in products %}
+                                {% if obj.id == 3 %}
+                                    <a href="{% url 'load_product_details_fh' obj.id %}"><img class="img-thumbnail " src="{{obj.pr_mimage.url}}" alt="" ></a>
+                                {% elif obj.id == 4 %}
+                                    <a href="{% url 'load_product_details_fh' obj.id %}"><img class="img-thumbnail " src="{{obj.pr_mimage.url}}" alt=""></a>
+                                {% elif obj.id == 5 %}
+                                    <a href="{% url 'load_product_details_fh' obj.id %}"><img class="img-thumbnail " src="{{obj.pr_mimage.url}}" alt=""></a>
+                                {% elif obj.id == 6 %}
+                                    <a href="{% url 'load_product_details_fh' obj.id %}"><img class="img-thumbnail " src="{{obj.pr_mimage.url}}" alt=""></a>
+                                {% elif obj.id == 8 %}
+                                    <a href="{% url 'load_product_details_fh' obj.id %}"><img class="img-thumbnail " src="{{obj.pr_mimage.url}}" alt=""></a>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <p><a href="" class="text-info">see more</a></p>
+                    </div>
+                    <div class="col heading card-title">
+                        <h3>Trending Phones</h3>
+                        <div class="d-flex">
+                            {% for obj in products %}
+                                {% if obj.id == 41 %}
+                                    <a href="{% url 'load_product_details_fh' obj.id %}"><img class="img-thumbnail" src="{{obj.pr_mimage.url}}" alt="" ></a>
+                                {% elif obj.id == 39 %}
+                                    <a href="{% url 'load_product_details_fh' obj.id %}"><img class="img-thumbnail" src="{{obj.pr_mimage.url}}" alt="" ></a>
+                                {% elif obj.id == 40 %}
+                                    <a href="{% url 'load_product_details_fh' obj.id %}"><img class="img-thumbnail" src="{{obj.pr_mimage.url}}" alt="" ></a>
+                                {% elif obj.id == 36 %}
+                                    <a href="{% url 'load_product_details_fh' obj.id %}"><img class="img-thumbnail" src="{{obj.pr_mimage.url}}" alt="" ></a>
+                                {% elif obj.id == 38 %}
+                                    <a href="{% url 'load_product_details_fh' obj.id %}"><img class="img-thumbnail" src="{{obj.pr_mimage.url}}" alt="" ></a>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <p><a href="" class="text-info">see more</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <marquee behavior="" direction=""><img src="" alt=""><h2>Replublic Day Sales are coming!!!</h2></marquee>
+
+        <div class="container-fluid mt-5">
+            <div class="row">
+                <div class="col-lg-6 col-md-24 col-sm-24 pb-5">
+                    <div class="card">
+                        <img class="card-img text-center poster" src="{% static 'img/international.jpg' %}" alt="" >
+                        <div class="centered">
+                            <a href="" class="btn btn-primary shopnow">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-24 col-sm-24 pb-5">
+                    <div class="card">
+                        <img class="card-img text-center poster" src="{% static 'img/iconic.jpg' %}" alt="">
+                        <div class="centered" >
+                            <a href="" class="btn btn-primary shopnow" >Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid pt-5">
+            <div class="seven">
+                <h1 style="font-size:2vw;">Top Products</h1>
+            </div>
+            <div class="row px-xl-5 pb-3 itembox">
+                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                    <div class="card">
+                        {% for obj in products %}
+                            {% if obj.id == 46 %}
+                                <div class="card-header border ">
+                                    <a href="{% url 'load_product_details_fh' obj.id %}"><img class="img-thumbnail " src="{{obj.pr_mimage.url}}" alt=""></a> 
+                                </div>
+                                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                    <h6 class="text-truncate mb-3" style="font-size: larger; text-transform: uppercase;">{{obj.pr_name}}</h6>
+                                    <div class="d-flex justify-content-center">
+                                        <h6 style="font-size: larger;"><span>&#8377;</span>{{obj.pr_discost}}</h6>
+                                    </div>
+                                </div>
+
+                        <div class="card-footer d-flex border justify-content-between">
+                            <a href="{% url 'load_product_details_fh' obj.id %}" class="btn btn-sm text-dark p-0" style="font-size: larger;"><i
+                                    class="fas fa-eye text-primary mr-1"></i>Detail</a>
+                            <a href="{% url 'add_to_cart' obj.id %}" class="btn btn-sm text-dark p-0" style="font-size: larger;"><i
+                                    class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                    <div class="card">
+                        {% for obj in products %}
+                            {% if obj.id == 28 %}
+                                <div class="card-header border ">
+                                    <a href="{% url 'load_product_details_fh' obj.id %}"><img class="img-thumbnail " src="{{obj.pr_mimage.url}}" alt=""></a>
+                                </div>
+                                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                    <h6 class="text-truncate mb-3" style="font-size: larger; text-transform: uppercase;">{{obj.pr_name}}</h6>
+                                    <div class="d-flex justify-content-center">
+                                        <h6 style="font-size: larger;"><span>&#8377;</span>{{obj.pr_discost}}</h6>
+                                    </div>
+                                </div>
+
+                        <div class="card-footer d-flex justify-content-between border" >
+                            <a href="{% url 'load_product_details_fh' obj.id %}" class="btn btn-sm text-dark p-0" style="font-size: larger;"><i
+                                    class="fas fa-eye text-primary mr-1"></i>Detail</a>
+                            <a href="{% url 'add_to_cart' obj.id %}" class="btn btn-sm text-dark p-0" style="font-size: larger;"><i
+                                    class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                    <div class="card ">
+                        {% for obj in products %}
+                            {% if obj.id == 37 %}
+                                <div class="card-header border ">
+                                    <a href="{% url 'load_product_details_fh' obj.id %}"><img class="img-thumbnail " src="{{obj.pr_mimage.url}}" alt=""></a>
+                                </div>
+                                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                    <h6 class="text-truncate mb-3" style="font-size: larger; text-transform: uppercase;">{{obj.pr_name}}</h6>
+                                    <div class="d-flex justify-content-center">
+                                        <h6 style="font-size: larger;"><span>&#8377;</span>{{obj.pr_discost}}</h6>
+                                    </div>
+                                </div>
+
+                        <div class="card-footer d-flex justify-content-between border" >
+                            <a href="{% url 'load_product_details_fh' obj.id %}" class="btn btn-sm text-dark p-0" style="font-size: larger;"><i
+                                    class="fas fa-eye text-primary mr-1"></i>Detail</a>
+                            <a href="{% url 'add_to_cart' obj.id %}" class="btn btn-sm text-dark p-0" style="font-size: larger;"><i
+                                    class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                    <div class="card ">
+                        {% for obj in products %}
+                            {% if obj.id == 19 %}
+                                <div class="card-header border ">
+                                    <a href="{% url 'load_product_details_fh' obj.id %}"><img class="img-thumbnail " src="{{obj.pr_mimage.url}}" alt=""></a>  
+                                </div>
+                                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                    <h6 class="text-truncate mb-3" style="font-size: larger; text-transform: uppercase;">{{obj.pr_name}}</h6>
+                                    <div class="d-flex justify-content-center">
+                                        <h6 style="font-size: larger;"><span>&#8377;</span>{{obj.pr_discost}}</h6>
+                                    </div>
+                                </div>
+
+                        <div class="card-footer d-flex justify-content-between border" >
+                            <a href="{% url 'load_product_details_fh' obj.id %}" class="btn btn-sm text-dark p-0" style="font-size: larger;"><i
+                                    class="fas fa-eye text-primary mr-1"></i>Detail</a>
+                            <a href="{% url 'add_to_cart' obj.id %}" class="btn btn-sm text-dark p-0" style="font-size: larger;"><i
+                                    class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                    <div class="card ">
+                        <div class="card-header border ">
+                            {% for obj in products %}
+                            {% if obj.id == 8 %}
+                                <a href="{% url 'load_product_details_fh' obj.id %}"><img class="img-thumbnail " src="{{obj.pr_mimage.url}}" alt=""></a>
+                                
+                            </div>
+                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3"
+                                >
+                                <h6 class="text-truncate mb-3" style="font-size: 20px; text-transform: uppercase;">{{obj.pr_name}}</h6>
+                                <div class="d-flex justify-content-center">
+                                    <h6 style="font-size: larger;"><span>&#8377;</span>{{obj.pr_discost}}</h6>
+    
+                                </div>
+                            </div>
+
+                        <div class="card-footer d-flex justify-content-between border" >
+                            <a href="{% url 'load_product_details_fh' obj.id %}" class="btn btn-sm text-dark p-0" style="font-size: larger;"><i
+                                    class="fas fa-eye text-primary mr-1"></i>Detail</a>
+                            <a href="{% url 'add_to_cart' obj.id %}" class="btn btn-sm text-dark p-0" style="font-size: larger;"><i
+                                    class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                    <div class="card ">
+                        {% for obj in products %}
+                            {% if obj.id == 5 %}
+                                <div class="card-header border ">
+                                    <a href="{% url 'load_product_details_fh' obj.id %}"><img class="img-thumbnail " src="{{obj.pr_mimage.url}}" alt=""></a>
+                                </div>
+                                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                    <h6 class="text-truncate mb-3" style="font-size: larger; text-transform: uppercase;">{{obj.pr_name}}</h6>
+                                    <div class="d-flex justify-content-center">
+                                        <h6 style="font-size: larger;"><span>&#8377;</span>{{obj.pr_discost}}</h6>
+                                    </div>
+                                </div>
+
+                        <div class="card-footer d-flex justify-content-between border" >
+                            <a href="{% url 'load_product_details_fh' obj.id %}" class="btn btn-sm text-dark p-0" style="font-size: larger;"><i
+                                    class="fas fa-eye text-primary mr-1"></i>Detail</a>
+                            <a href="{% url 'add_to_cart' obj.id %}" class="btn btn-sm text-dark p-0" style="font-size: larger;"><i
+                                    class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                    <div class="card ">
+                        {% for obj in products %}
+                            {% if obj.id == 16 %}
+                                <div class="card-header border ">
+                                    <a href="{% url 'load_product_details_fh' obj.id %}"><img class="img-thumbnail " src="{{obj.pr_mimage.url}}" alt=""></a> 
+                                </div>
+                                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                    <h6 class="text-truncate mb-3" style="font-size: larger; text-transform: uppercase;">{{obj.pr_name}}</h6>
+                                    <div class="d-flex justify-content-center">
+                                        <h6 style="font-size: larger;"><span>&#8377;</span>{{obj.pr_discost}}</h6>
+                                    </div>
+                                </div>
+
+                        <div class="card-footer d-flex justify-content-between border" >
+                            <a href="{% url 'load_product_details_fh' obj.id %}" class="btn btn-sm text-dark p-0" style="font-size: larger;"><i
+                                    class="fas fa-eye text-primary mr-1"></i>Detail</a>
+                            <a href="{% url 'add_to_cart' obj.id %}" class="btn btn-sm text-dark p-0" style="font-size: larger;"><i
+                                    class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                    <div class="card ">
+                        {% for obj in products %}
+                            {% if obj.id == 23 %}
+                                <div class="card-header border ">
+                                    <a href="{% url 'load_product_details_fh' obj.id %}"><img class="img-thumbnail " src="{{obj.pr_mimage.url}}" alt=""></a>
+                                </div>
+                                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                    <h6 class="text-truncate mb-3" style="font-size: larger; text-transform: uppercase; ">{{obj.pr_name}}</h6>
+                                    <div class="d-flex justify-content-center">
+                                        <h6 style="font-size: larger;"><span>&#8377;</span>{{obj.pr_discost}}</h6>
+                                    </div>
+                                </div>
+
+                        <div class="card-footer d-flex justify-content-between border" >
+                            <a href="{% url 'load_product_details_fh' obj.id %}" class="btn btn-sm text-dark p-0" style="font-size: larger;"><i
+                                    class="fas fa-eye text-primary mr-1"></i>Detail</a>
+                            <a href="{% url 'add_to_cart' obj.id %}" class="btn btn-sm text-dark p-0" style="font-size: larger;"><i
+                                    class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid mt-5">
+            <div class="row">
+                <div class="col-lg-6 col-md-24 col-sm-24 pb-5">
+                    <div class="card">
+                        <img class="card-img text-center poster" src="{% static 'img/poster.jpg' %}" alt="" >
+                        <div class="centered">
+                            <a href="" class="btn btn-primary shopnow">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-24 col-sm-24 pb-5">
+                    <div class="card">
+                        <img class="card-img text-center poster" src="{% static 'img/offer-1.jpg' %}" alt="">
+                        <div class="centered" >
+                            <a href="" class="btn btn-primary shopnow" >Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-title">
+            <h1 >Top Brands</h1>
+        </div>
+        <marquee class="brands" behavior="" direction="">
+
+            <div class="flex" >
+                <div>
+                    <img src="{% static 'img/vendor-1.jpg' %}">
+                    <img src="{% static 'img/vendor-2.png' %}" >
+                    <img src="{% static 'img/vendor-3.png' %}" >
+                    <img src="{% static 'img/vendor-4.png' %}">
+                    <img src="{% static 'img/vendor-5.jpg' %}">
+                    <img src="{% static 'img/vendor-6.jpg' %}">
+                    <img src="{% static 'img/vendor-7.jpg' %}">
+                    <img src="{% static 'img/vendor-8.jpg' %}">
+                </div>
+            </div>
+        </marquee>
+    </div>
+</body>
+{% endblock %}

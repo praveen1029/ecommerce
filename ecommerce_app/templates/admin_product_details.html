@@ -1,0 +1,98 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+
+<head>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/product_details.css' %}">
+</head>
+
+<style>
+    #show_product{
+    background-color: #54B4D3;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    border-radius: 10px;
+    font-weight: 400;
+}
+
+.total{
+    border-style: solid;
+    height:98%;
+    width: 90%;
+    margin-top: 20px;
+    padding-top: 100px;
+    margin-left: 5vw;
+    background: rgba(1, 7, 1, .8) ;
+    text-align: left;
+    border-radius: 20px;
+}
+
+.navbar-brand{
+    font-size: 27px;
+}
+</style>
+
+<body>
+    <div class="container-fluid">
+
+    <div class="row px-xl-1 product" style="margin-left: 20vw; margin-top: 20px;">
+        <div class="col-lg-6 ">
+            <div id="header-carousel" class="carousel slide carousel-fade " data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#header-carousel" data-slide-to="1"></li>
+                    <li data-target="#header-carousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner ">
+                    <div class="carousel-item  active" >
+                        <img class="d-block img-fluid " src="{{product.pr_mimage.url}}">
+                    </div>
+                    {% if product.pr_simage1.url != Null %}
+                    <div class="carousel-item position-relative">
+                        <img class="d-block img-fluid" src="{{product.pr_simage1.url}}" >
+                    </div>
+                    {% endif %}
+                    {% if product.pr_simage2.url != Null %}
+                    <div class="carousel-item position-relative">
+                        <img class="d-block img-fluid" src="{{product.pr_simage2.url}}">
+                    </div>
+                    {% endif %}
+                    {% if product.pr_simage3.url != Null %}
+                    <div class="carousel-item position-relative">
+                        <img class="d-block img-fluid" src="{{product.pr_simage3.url}}">
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 data">
+            <h1>{{product.pr_name}}</h1><br>
+            <div>
+                <p>{{product.pr_description}}</p>
+                
+                <p>Brand: {{product.pr_brand}}</p>
+                <p>colour: {{product.pr_colour}}</p>
+                
+                {% if product.pr_discount == 0 %}
+                <p>&#8377;{{product.pr_cost}}</p>
+                {% else %}
+                <p>&#8377;<del>{{product.pr_cost}}</del>&nbsp;{{product.pr_discount}}% Off&nbsp; -&nbsp; &nbsp;&#8377;{{product.pr_discost}}</p>
+                {% endif %}
+                <p>Manufacture Date : {{product.manufacture_date}}</p>
+                <p>Rating : {{product.pr_rating}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-2"></div>
+    <div class="col-lg-3"></div>
+
+ 
+    <a href="{% url 'load_show_products' %}"><input class="back" type="button" value="Back" style="background-color: red; height: 3vh; width:20vh; font-size: 2vh; margin-left: 40vw; margin-top: 20px;"></a>
+
+</div>
+</body>
+
+{% endblock %}

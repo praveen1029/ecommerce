@@ -1,0 +1,45 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/show_user.css' %}">
+</head>
+
+<body>
+    <div class="container">
+    {% for message in messages %}
+    <h5>
+        <div class="alert alert-danger mt-5" style=" width: 47vw; margin-left:10vh; text-align: center;">
+            {{ message }}
+        </div>
+    </h5>
+    {% endfor %}
+</div>
+<div class="container card mt-5">
+    <div class="container card mt-5">
+        <h1 class="mt-1" style="font-size: 50px; text-align: center;">Customer Data</h1>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <th>NAME</th>
+                    <th>ACTION</th>
+
+                </thead>
+                <tbody>
+                    {% for item in customers %}
+                    <tr>
+                        <td><a href="{% url 'load_user_details' item.id %}">{{item.user.first_name }} {{ item.user.last_name }}</a> </td>
+                        <div>
+                            <td><a class="delete"href="/deleteuser/{{item.id}}">delete</a></td>
+                        </div>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table><br><br>
+        </div>
+    </div>
+</body>
+
+{% endblock%}

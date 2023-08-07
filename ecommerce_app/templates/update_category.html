@@ -1,0 +1,54 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/update_Category.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        {% for message in messages %}
+        <h5>
+            <div class="alert alert-danger mt-5" style=" width: 47vw; margin-left:10vh; text-align: center;">
+                {{ message }}
+            </div>
+        </h5>
+        {% endfor %}
+    </div>
+    <div class='row'>
+        <div class='col-md-3'></div>
+        <div class='col-md-5 mt-3'>
+            <div class="card p-4 total">
+                <form method='post' class='post-form' action="/updatecategory/{{category.id}}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-5"></div>
+                        <div class="col-md-12">
+                            <h3 class="text-primary" style="text-align: center;">Update Category</h3>
+                        </div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label >Category Name : </label><br>
+                            <input type="text" name="cname" class="form-control" value="{{category.cat_name}}"><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <input type="button" value="Back" onclick="javascript:history.go(-1)" class="back">
+
+                        <div class="col-md-5 mt-3">
+                            <button type="submit" class="btn btn-info submit w-50 h-100">Submit</button>
+                        </div>
+                    </div>
+                    
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

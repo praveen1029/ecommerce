@@ -1,0 +1,93 @@
+{% extends 'final_base.html' %}
+
+{% block content %}
+
+<head>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/product_details.css' %}">
+</head>
+  
+<body>
+    <div class="container-fluid">
+    <div class="container">
+        {% for message in messages %}
+        <h5>
+            <div class="alert alert-danger mt-5" style=" width: 47vw; margin-left:10vh; text-align: center; font-size: large;">
+                {{ message }}
+            </div>
+        </h5>
+        {% endfor %}
+    </div>
+    
+    <div class="col-lg-3"></div>
+    <div class="row px-xl-1 product " >
+        <div class="col-lg-6 ">
+            <div id="header-carousel" class="carousel slide carousel-fade " data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#header-carousel" data-slide-to="1"></li>
+                    <li data-target="#header-carousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner ">
+                    <div class="carousel-item  active" >
+                        <img class="d-block img-fluid " src="{{product.pr_mimage.url}}">
+                    </div>
+                    {% if product.pr_simage1.url != Null %}
+                    <div class="carousel-item position-relative">
+                        <img class="d-block img-fluid" src="{{product.pr_simage1.url}}" >
+                    </div>
+                    {% endif %}
+                    {% if product.pr_simage2.url != Null %}
+                    <div class="carousel-item position-relative">
+                        <img class="d-block img-fluid" src="{{product.pr_simage2.url}}">
+                    </div>
+                    {% endif %}
+                    {% if product.pr_simage3.url != Null %}
+                    <div class="carousel-item position-relative">
+                        <img class="d-block img-fluid" src="{{product.pr_simage3.url}}">
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 data">
+            <h1>{{product.pr_name}}</h1><br>
+            <div>
+                <p>{{product.pr_description}}</p>
+                
+                <p>Brand: {{product.pr_brand}}</p>
+                <p>colour: {{product.pr_colour}}</p>
+                
+                {% if product.pr_discount == 0 %}
+                <p>&#8377;{{product.pr_cost}}</p>
+                {% else %}
+                <p>&#8377;<del>{{product.pr_cost}}</del>&nbsp;{{product.pr_discount}}% Off&nbsp; -&nbsp; &nbsp;&#8377;{{product.pr_discost}}</p>
+                {% endif %}
+                <p>Manufacture Date : {{product.manufacture_date}}</p>
+                <p>Rating : {{product.pr_rating}}</p>
+                <button class="btn btn-primary cartbutton"> <a href="{% url 'add_to_cart' product.id %}" class="cartlink">Add To Cart</a></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-2"></div>
+    <div class="col-lg-3"></div>
+
+ 
+
+    <button class="btn btn-danger backbutton"> <a href="{% url 'load_shop' product.category.id %}" class="backlink">Go Back</a></button>
+
+
+    <h6>More Products</h6>
+    <div class="row bg-info">
+        <div class="d-flex">
+            {% for obj in products %}
+                <a href=""><img class="img-thumbnail " src="{{obj.pr_mimage.url}}" alt="" ></a>            
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+
+{% endblock %}

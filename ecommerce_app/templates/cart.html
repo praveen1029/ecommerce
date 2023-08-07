@@ -1,0 +1,50 @@
+{% extends 'final_base.html' %}
+
+{% block content %}
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}">
+    <title>Cart</title>
+</head>
+<body>
+    
+    <h1>My Cart</h1>
+    <div class="container">
+        {% for message in messages %}
+        <h5>
+            <div class="alert alert-danger mt-5" style=" width: 47vw; margin-left:10vh; text-align: center;">
+                {{ message }}
+            </div>
+        </h5>
+        {% endfor %}
+    </div>
+    
+    {% for item in products %}
+    <div class="col-sm-3"></div>
+        <div class="row data">
+            <div class="col-md-6">
+                <a href=""><img class="img-fluid " src="{{item.product.pr_mimage.url}}" ></a>
+            </div>
+            <div class="col-md-6 textdata">
+                <h2>{{item.product.pr_name}}</h2><BR></BR>
+                <div>
+                    <p>Colour : {{item.product.pr_colour}}</p>
+                    <p>Brand : {{item.product.pr_brand}}</p>
+                    {% if item.product.pr_discount == 0 %}
+                    <p>Cost: &#8377;{{item.product.pr_cost}}</p>
+                    {% else %}
+                    <p>Cost: &#8377;{{item.product.pr_discost}}</p>
+                    {% endif %}
+                    <p>Rating : {{item.product.pr_rating}}</p><br>
+                        <button type="submit" class="btn btn-outline-dark bg-danger submit w-50 h-100"><a href="/deletecart/{{item.product.id}}"style="color:black;, font-size:20px;">Remove Product</a></button>
+                </div>
+            </div>
+        </div>
+    {% endfor %}  
+    <div class="col-sm-1"></div>  
+    <div class="col-sm-1"></div>  
+    <div class="col-sm-1"></div>  
+    
+</body>
+<button type="submit" class="btn btn-outline-dark bg-success submit w-50"><a href="{% url 'load_order' %}"style="color:black;, font-size:20px;">Place Product</a></button>
+{% endblock %}

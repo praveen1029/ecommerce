@@ -1,0 +1,50 @@
+body{
+    text-align: center;
+    background: url("/static/img/register.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+.total{
+    border-style: solid;
+    height:98%;
+    width: 90%;
+    margin-top: 20px;
+    padding-top: 100px;
+    margin-left: 5vw;
+    background: rgba(59,113,202, 1) ;
+    text-align: left;
+    border-radius: 20px;
+}
+
+
+
+label{
+    color: white;
+    font-size:30px;
+}
+
+input[type=radio]{
+    width: 10%;
+    height: 3vh;
+    margin-left: 1vh;
+    margin-top: 10px;
+    float: left;
+}
+
+.submit{
+    width: 30vh;
+    height: 5vh;
+    color: black;
+    font-size: 18px;
+
+}
+
+p{
+    font-size: 18px;
+    margin-left: -1vw;
+    color: black;
+}
+   
